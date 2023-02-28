@@ -39,6 +39,9 @@ class HomePage extends StatelessWidget {
                   ),
                 );
               },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).colorScheme.secondary,
+              ),
               child: const Text('LOG IN FOR THE EVENT:'),
             )
           ],
