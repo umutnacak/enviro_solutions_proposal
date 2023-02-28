@@ -17,9 +17,7 @@ class HomePage extends StatelessWidget {
             const Expanded(
               child: SizedBox.shrink(),
             ),
-            Image.network(
-              'http://www.rbreader.com/wp-content/uploads/2019/02/napis_rb_logo.png',
-            ),
+            const Image(image: AssetImage('assets/napis_rb_logo.png')),
             const Expanded(
               child: SizedBox.shrink(),
             ),
