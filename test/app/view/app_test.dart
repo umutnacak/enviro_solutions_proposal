@@ -4,7 +4,7 @@ import 'package:rb_reader/home/home.dart';
 
 void main() {
   group('App', () {
-    testWidgets('renders CounterPage', (tester) async {
+    testWidgets('renders HomePage', (tester) async {
       await tester.pumpWidget(const App());
       expect(find.byType(HomePage), findsOneWidget);
     });

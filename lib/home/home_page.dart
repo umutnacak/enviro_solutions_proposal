@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rb_reader/login/login.dart';
+import 'package:rb_reader/map/map_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -25,14 +26,33 @@ class HomePage extends StatelessWidget {
               onPressed: null,
               child: Text('Select the route:'),
             ),
-            ElevatedButton(
-              onPressed: null,
-              child: Text('Map:'),
-            ),
+            MapButton(),
             LoginButton(),
           ],
         ),
       ),
+    );
+  }
+}
+
+class MapButton extends StatelessWidget {
+  const MapButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      key: const Key('MapButton'),
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute<MapPage>(
+            builder: (context) => const MapPage(),
+          ),
+        );
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+      ),
+      child: const Text('Map:'),
     );
   }
 }
