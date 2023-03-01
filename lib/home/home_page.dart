@@ -12,39 +12,49 @@ class HomePage extends StatelessWidget {
         alignment: Alignment.center,
         padding: const EdgeInsets.all(10),
         child: Column(
-          children: [
-            const Text('Your Position'),
-            const Expanded(
+          children: const [
+            Text('Your Position'),
+            Expanded(
               child: SizedBox.shrink(),
             ),
-            const Image(image: AssetImage('assets/napis_rb_logo.png')),
-            const Expanded(
+            Image(image: AssetImage('assets/napis_rb_logo.png')),
+            Expanded(
               child: SizedBox.shrink(),
             ),
-            const ElevatedButton(
+            ElevatedButton(
               onPressed: null,
               child: Text('Select the route:'),
             ),
-            const ElevatedButton(
+            ElevatedButton(
               onPressed: null,
               child: Text('Map:'),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute<LoginPage>(
-                    builder: (context) => const LoginPage(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).colorScheme.secondary,
-              ),
-              child: const Text('LOG IN FOR THE EVENT:'),
-            )
+            LoginButton(),
           ],
         ),
       ),
+    );
+  }
+}
+
+class LoginButton extends StatelessWidget {
+  const LoginButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      key: const Key('LoginButton'),
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute<LoginPage>(
+            builder: (context) => const LoginPage(),
+          ),
+        );
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+      ),
+      child: const Text('LOG IN FOR THE EVENT:'),
     );
   }
 }

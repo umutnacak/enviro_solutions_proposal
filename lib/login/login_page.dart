@@ -12,9 +12,11 @@ class LoginPage extends StatelessWidget {
         child: Column(
           children: [
             TextFormField(
+              key: const Key('TeamName'),
               decoration: const InputDecoration(hintText: 'Team Name'),
             ),
             TextFormField(
+              key: const Key('Token'),
               decoration: const InputDecoration(hintText: 'Token'),
             ),
             const Expanded(child: SizedBox.shrink()),
